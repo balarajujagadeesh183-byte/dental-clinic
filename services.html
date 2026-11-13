@@ -1,0 +1,1521 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Explore SmileCare dental services: cleaning, implants, root canal, whitening, braces and cosmetic dentistry.">
+<title>Dental Services | SmileCare Dental Clinic</title>
+
+<link rel="icon" type="image/png" sizes="64x64" href="images/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root {
+    --primary:#00A6A6;
+    --secondary:#092B40;
+    --background:#ffffff;
+    --text:#19394F;
+    --muted:#627789;
+    --border:#E3EBEF;
+    --card:#EAF8F7;
+}
+
+body.dark {
+    --background:#101C27;
+    --secondary:#ffffff;
+    --text:#EAF3F8;
+    --muted:#B2C2CC;
+    --border:#30424F;
+    --card:#203C47;
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html { scroll-behavior:smooth; }
+
+body {
+    background:var(--background);
+    color:var(--text);
+    transition:.3s ease;
+    line-height:1.7;
+}
+
+a {
+    text-decoration:none;
+    color:inherit;
+}
+
+/* HEADER */
+
+.header {
+    width:100%;
+    min-height:100px;
+    background:var(--background);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:15px 5%;
+    border:1px solid var(--border);
+    box-shadow:0 4px 15px rgba(0,0,0,.07);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    gap:20px;
+}
+
+/* LOGO */
+
+.logo {
+    display:flex;
+    align-items:center;
+    gap:14px;
+    text-decoration:none;
+    flex-shrink:0;
+}
+
+.logo-icon {
+    width:68px;
+    height:68px;
+    border-radius:16px;
+    background:var(--card);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:var(--primary);
+}
+
+.logo-icon img {
+    height:50px;
+    width:50px;
+    object-fit:contain;
+}
+
+.logo-content h2 {
+    color:var(--primary);
+    font-size:27px;
+    font-weight:800;
+    letter-spacing:-1px;
+}
+
+.logo-content h2 span {
+    color:var(--secondary);
+}
+
+.logo-content p {
+    font-size:11px;
+    color:var(--muted);
+    letter-spacing:1px;
+    margin-top:-5px;
+}
+
+/* NAVIGATION */
+
+.navbar {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:25px;
+}
+
+.navbar > a,
+.dropdown-toggle {
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:10px 0;
+    border:none;
+    background:transparent;
+    color:var(--text);
+    font-family:inherit;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+    white-space:nowrap;
+}
+
+.navbar > a::after,
+.dropdown-toggle::after {
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:2px;
+    width:0;
+    height:2px;
+    background:var(--primary);
+    transition:.3s;
+}
+
+.navbar > a:hover,
+.navbar > a.active,
+.dropdown-toggle:hover {
+    color:var(--primary);
+}
+
+.navbar > a:hover::after,
+.navbar > a.active::after,
+.dropdown-toggle:hover::after {
+    width:100%;
+}
+
+/* HOME DROPDOWN */
+
+.dropdown {
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+}
+
+.dropdown-toggle i {
+    font-size:11px;
+    transition:.3s;
+}
+
+.dropdown.open .dropdown-toggle i {
+    transform:rotate(180deg);
+}
+
+.dropdown-menu {
+    position:absolute;
+    top:calc(100% + 8px);
+    left:0;
+    min-width:190px;
+    display:none;
+    flex-direction:column;
+    padding:9px;
+    background:var(--background);
+    border:1px solid var(--border);
+    border-radius:10px;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+    z-index:2000;
+}
+
+.dropdown.open .dropdown-menu {
+    display:flex;
+}
+
+.dropdown-menu a {
+    display:block;
+    width:100%;
+    padding:10px 12px;
+    border-radius:6px;
+    color:var(--text);
+    font-size:13px;
+    white-space:nowrap;
+}
+
+.dropdown-menu a::after {
+    display:none;
+}
+
+.dropdown-menu a:hover {
+    background:var(--card);
+    color:var(--primary);
+}
+
+/* HEADER BUTTONS */
+
+.header-actions {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-shrink:0;
+}
+
+.action-btn {
+    width:44px;
+    height:44px;
+    border:1px solid var(--primary);
+    background:transparent;
+    color:var(--text);
+    border-radius:12px;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.action-btn:hover {
+    background:var(--card);
+    transform:translateY(-2px);
+}
+
+.login-btn {
+    padding:11px 22px;
+    border:1px solid var(--primary);
+    border-radius:12px;
+    background:#00A6A6;
+    color:var(--text);
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+    white-space:nowrap;
+}
+
+.login-btn:hover {
+    background:var(--primary);
+    color:white;
+}
+
+/* HERO */
+
+.hero {
+    height:95vh;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(90deg,rgba(9,36,61,.90),rgba(9,36,61,.40)),
+    url("images/images\ \(2\).jpg");
+    background-size:cover;
+    background-position:center;
+    color:white;
+    padding:70px 9%;
+}
+
+.hero-content {
+    max-width:650px;
+}
+
+.hero-label {
+    display:inline-block;
+    color:#7ce5df;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:3px;
+}
+
+.hero h1 {
+    font-size:48px;
+    line-height:1.2;
+    margin:20px 0;
+}
+
+.hero p {
+    font-size:16px;
+    color:#e1edf2;
+    line-height:1.8;
+}
+
+.primary-btn {
+    display:inline-block;
+    margin-top:25px;
+    padding:13px 25px;
+    background:var(--primary);
+    color:white;
+    border-radius:6px;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.primary-btn:hover {
+    background:#078b8b;
+    transform:translateY(-3px);
+}
+
+/* COMMON */
+
+.section {
+    padding:80px 8%;
+}
+
+.section-title {
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 45px;
+}
+
+.section-title span {
+    color:var(--primary);
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.section-title h2 {
+    color:var(--secondary);
+    font-size:34px;
+    margin:10px 0;
+}
+
+body.dark .section-title h2 {
+    color:white;
+}
+
+.section-title p {
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* SERVICES */
+
+.services-section {
+    background:var(--card);
+}
+
+.services-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.service-card {
+    background:var(--background);
+    border:1px solid var(--border);
+    border-radius:12px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.service-card:hover {
+    transform:translateY(-8px);
+    box-shadow:0 12px 30px rgba(0,0,0,.10);
+}
+
+.service-card img {
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.service-content {
+    padding:25px;
+}
+
+.service-number {
+    color:var(--primary);
+    font-size:13px;
+    font-weight:700;
+}
+
+.service-content h3 {
+    font-size:21px;
+    margin:12px 0;
+    color:var(--text);
+}
+
+.service-content p {
+    color:var(--muted);
+    line-height:1.7;
+    font-size:14px;
+}
+
+.service-link {
+    display:inline-block;
+    margin-top:18px;
+    color:var(--primary);
+    text-decoration:none;
+    font-weight:600;
+    font-size:14px;
+}
+
+/* WHY CHOOSE US */
+
+.why-section {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:55px;
+    align-items:center;
+}
+
+.why-image img {
+    width:100%;
+    height:430px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+.why-content span {
+    color:var(--primary);
+    font-weight:700;
+    letter-spacing:2px;
+    font-size:13px;
+}
+
+.why-content h2 {
+    color:var(--secondary);
+    font-size:34px;
+    margin:15px 0;
+    line-height:1.3;
+}
+
+body.dark .why-content h2 {
+    color:white;
+}
+
+.why-content > p {
+    color:var(--muted);
+    line-height:1.8;
+    margin-bottom:20px;
+    font-size:14px;
+}
+
+.benefit {
+    display:flex;
+    gap:15px;
+    margin:20px 0;
+    align-items:flex-start;
+}
+
+.benefit-icon {
+    min-width:42px;
+    height:42px;
+    background:var(--card);
+    color:var(--primary);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    font-size:20px;
+}
+
+.benefit h3 {
+    font-size:17px;
+    margin-bottom:6px;
+}
+
+.benefit p {
+    color:var(--muted);
+    margin:0;
+    font-size:14px;
+}
+
+/* PROCESS */
+
+.process-section {
+    background:var(--card);
+}
+
+.process-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.process-card {
+    background:var(--background);
+    padding:30px 20px;
+    text-align:center;
+    border:1px solid var(--border);
+    border-radius:10px;
+}
+
+.process-icon {
+    width:65px;
+    height:65px;
+    margin:0 auto 18px;
+    border-radius:50%;
+    background:var(--primary);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+}
+
+.process-card h3 {
+    margin-bottom:12px;
+    font-size:17px;
+}
+
+.process-card p {
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.7;
+}
+
+/* TEAM */
+
+.team-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.team-card {
+    background:var(--background);
+    border:1px solid var(--border);
+    border-radius:12px;
+    overflow:hidden;
+    text-align:center;
+}
+
+.team-card img {
+    width:100%;
+    height:270px;
+    object-fit:cover;
+}
+
+.team-card div {
+    padding:22px;
+}
+
+.team-card h3 {
+    margin-bottom:8px;
+    font-size:18px;
+}
+
+.team-card p {
+    color:var(--primary);
+    font-size:14px;
+}
+
+/* CTA */
+
+.cta {
+    background:var(--secondary);
+    color:white;
+    padding:65px 8%;
+    text-align:center;
+}
+
+.cta h2 {
+    font-size:34px;
+    margin-bottom:15px;
+}
+
+.cta p {
+    color:#d4e4eb;
+    line-height:1.7;
+    font-size:14px;
+}
+
+/* FOOTER */
+
+.footer {
+    width:100%;
+    background:transparent;
+    color:var(--text);
+    border-top:1px solid var(--border);
+}
+
+.footer-container {
+    max-width:1500px;
+    margin:auto;
+    padding:55px 7%;
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1.2fr 1.3fr 1.3fr;
+    gap:35px;
+}
+
+/* FOOTER LOGO */
+
+.footer-logo {
+    display:flex;
+    align-items:center;
+    gap:13px;
+    margin-bottom:25px;
+}
+
+.footer-logo .logo-icon {
+    width:65px;
+    height:65px;
+}
+
+.footer-logo h2 {
+    font-size:25px;
+    color:var(--primary);
+    font-weight:800;
+}
+
+.footer-logo h2 span {
+    color:var(--secondary);
+}
+
+.footer-logo p {
+    font-size:10px;
+    color:var(--muted);
+    letter-spacing:1px;
+    margin-top:5px;
+}
+
+.footer-about > p {
+    font-size:14px;
+    line-height:1.9;
+    color:var(--muted);
+}
+
+/* SOCIAL LINKS */
+
+.social-links {
+    display:flex;
+    gap:16px;
+    margin-top:22px;
+}
+
+.social-links a {
+    width:36px;
+    height:36px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid var(--primary);
+    border-radius:50%;
+    text-decoration:none;
+    color:var(--primary);
+    font-size:16px;
+    transition:.3s;
+}
+
+.social-links a:hover {
+    background:var(--primary);
+    color:white;
+    transform:translateY(-4px);
+}
+
+/* FOOTER HEADINGS */
+
+.footer-column h3 {
+    font-size:18px;
+    color:var(--primary);
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+/* FOOTER LINKS */
+
+.footer-column ul {
+    list-style:none;
+}
+
+.footer-column ul li {
+    margin-bottom:12px;
+}
+
+.footer-column ul li a {
+    color:var(--text);
+    text-decoration:none;
+    font-size:13px;
+    transition:.3s;
+}
+
+.footer-column ul li a::before {
+    content:"›";
+    margin-right:12px;
+    font-size:20px;
+    color:var(--primary);
+}
+
+.footer-column ul li a:hover {
+    color:var(--primary);
+    padding-left:5px;
+}
+
+/* CONTACT */
+
+.contact-info p {
+    font-size:13px;
+    color:var(--text);
+    margin-bottom:14px;
+    line-height:1.7;
+}
+
+.contact-info span {
+    color:var(--primary);
+    font-weight:bold;
+    margin-right:8px;
+}
+
+/* COPYRIGHT */
+
+.copyright {
+    border-top:1px solid var(--border);
+    padding:18px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
+    color:var(--muted);
+    font-size:12px;
+}
+
+.legal-links {
+    display:flex;
+    gap:18px;
+}
+
+.legal-links a {
+    color:var(--muted);
+    font-size:12px;
+}
+
+.legal-links a:hover {
+    color:var(--primary);
+}
+
+/* RTL */
+
+body.rtl {
+    direction:rtl;
+    text-align:right;
+}
+
+body.rtl .hero {
+    background-position:right center;
+}
+
+body.rtl .dropdown-menu {
+    left:auto;
+    right:0;
+}
+
+body.rtl .benefit {
+    flex-direction:row;
+}
+
+body.rtl .footer-column ul li a::before {
+    margin-right:0;
+    margin-left:12px;
+}
+
+body.rtl .footer-column ul li a:hover {
+    padding-left:0;
+    padding-right:5px;
+}
+
+body.rtl .social-links {
+    justify-content:flex-start;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1200px) {
+
+    .header {
+        flex-wrap:wrap;
+        gap:18px;
+        height:auto;
+    }
+
+    .navbar {
+        gap:18px;
+    }
+
+    .navbar > a,
+    .dropdown-toggle {
+        font-size:14px;
+    }
+
+    .footer-container {
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+@media(max-width:900px) {
+
+    .header {
+        padding:15px 4%;
+    }
+
+    .navbar {
+        gap:12px;
+    }
+
+    .services-grid {
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .process-grid {
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-container {
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .header {
+        flex-direction:column;
+        height:auto;
+        padding:18px 5%;
+        gap:14px;
+    }
+
+    .navbar {
+        width:100%;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:12px 20px;
+    }
+
+    .header-actions {
+        justify-content:center;
+    }
+
+    .dropdown-menu {
+        top:calc(100% + 5px);
+    }
+
+    .why-section {
+        grid-template-columns:1fr;
+    }
+
+    .team-grid {
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-container {
+        grid-template-columns:repeat(2,1fr);
+        padding:40px 6%;
+    }
+
+}
+
+@media(max-width:480px) {
+
+    .section {
+        padding:55px 6%;
+    }
+
+    .logo-content h2 {
+        font-size:23px;
+    }
+
+    .navbar {
+        gap:8px 14px;
+    }
+
+    .navbar > a,
+    .dropdown-toggle {
+        font-size:13px;
+    }
+
+    .header-actions {
+        gap:8px;
+    }
+
+    .action-btn {
+        width:42px;
+        height:42px;
+    }
+
+    .login-btn {
+        padding:11px 20px;
+        font-size:14px;
+    }
+
+    .hero {
+        padding:55px 7%;
+    }
+
+    .hero h1 {
+        font-size:32px;
+    }
+
+    .hero p {
+        font-size:14px;
+    }
+
+    .services-grid,
+    .why-section,
+    .team-grid,
+    .process-grid,
+    .footer-container {
+        grid-template-columns:1fr;
+    }
+
+    .why-image img {
+        height:300px;
+    }
+
+    .section-title h2,
+    .why-content h2,
+    .cta h2 {
+        font-size:27px;
+    }
+
+    .footer-container {
+        padding:40px 7%;
+        gap:30px;
+    }
+
+    .copyright {
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .legal-links {
+        justify-content:center;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <a href="index.html" class="logo">
+
+        <div class="logo-icon">
+            <img src="images/logo.png" alt="Dental Logo">
+        </div>
+
+        <div class="logo-content">
+            <h2>SMILE<span>CARE</span></h2>
+            <p>DENTAL & ORAL CARE</p>
+        </div>
+
+    </a>
+
+    <nav class="navbar" aria-label="Main navigation">
+
+        <div class="dropdown" id="homeDropdown">
+
+            <button class="dropdown-toggle"
+                    type="button"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    onclick="toggleHomeDropdown()">
+
+                Home
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </button>
+
+            <div class="dropdown-menu">
+                <a href="index.html">Home – Standard</a>
+                <a href="home-elite.html">Home – Elite</a>
+            </div>
+
+        </div>
+
+        <a href="about.html">About Us</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="dashboard.html">Dashboard</a>
+
+    </nav>
+
+    <div class="header-actions">
+
+        <button class="action-btn"
+                onclick="toggleRTL()"
+                title="Toggle RTL"
+                aria-label="Toggle text direction">
+            <i class="fa-solid fa-right-left"></i>
+        </button>
+
+        <button class="action-btn"
+                onclick="toggleTheme()"
+                id="themeBtn"
+                title="Toggle Dark Mode"
+                aria-label="Toggle theme">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <button class="login-btn"
+                onclick="window.location.href='login.html'">
+            Login
+        </button>
+
+    </div>
+
+</header>
+
+<main>
+
+<!-- SECTION 1: HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-label">OUR DENTAL SERVICES</span>
+
+        <h1>Complete Dental Care For Your Beautiful Smile</h1>
+
+        <p>
+            Discover professional dental treatments designed to protect
+            your oral health, improve your smile and give you confidence.
+        </p>
+
+        <a href="contact.html" class="primary-btn">
+            Book An Appointment
+        </a>
+
+    </div>
+
+</section>
+
+<!-- SECTION 2: SERVICES -->
+
+<section class="section services-section">
+
+    <div class="section-title">
+        <span>WHAT WE OFFER</span>
+        <h2>Our Dental Services</h2>
+        <p>
+            We provide comprehensive dental treatments with modern
+            equipment and patient-focused care.
+        </p>
+    </div>
+
+    <div class="services-grid">
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=800&q=80" alt="General Dentistry">
+            <div class="service-content">
+                <span class="service-number">SERVICE 01</span>
+                <h3>General Dentistry</h3>
+                <p>Routine dental checkups, oral examinations and preventive treatments to maintain healthy teeth.</p>
+                <a href="contact.html" class="service-link">Book Service →</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=800&q=80" alt="Teeth Whitening">
+            <div class="service-content">
+                <span class="service-number">SERVICE 02</span>
+                <h3>Teeth Whitening</h3>
+                <p>Professional whitening treatments designed to improve the appearance of stained or discolored teeth.</p>
+                <a href="contact.html" class="service-link">Book Service →</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80" alt="Dental Implants">
+            <div class="service-content">
+                <span class="service-number">SERVICE 03</span>
+                <h3>Dental Implants</h3>
+                <p>Dental implant consultations and treatment planning for replacing missing teeth.</p>
+                <a href="contact.html" class="service-link">Book Service →</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?auto=format&fit=crop&w=800&q=80" alt="Orthodontics">
+            <div class="service-content">
+                <span class="service-number">SERVICE 04</span>
+                <h3>Orthodontics</h3>
+                <p>Teeth alignment consultations and orthodontic care for a more balanced smile.</p>
+                <a href="contact.html" class="service-link">Book Service →</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=800&q=80" alt="Root Canal">
+            <div class="service-content">
+                <span class="service-number">SERVICE 05</span>
+                <h3>Root Canal Treatment</h3>
+                <p>Dental assessment and root canal procedures to treat problems inside the tooth.</p>
+                <a href="contact.html" class="service-link">Book Service →</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=800&q=80" alt="Pediatric Dentistry">
+            <div class="service-content">
+                <span class="service-number">SERVICE 06</span>
+                <h3>Children's Dentistry</h3>
+                <p>Gentle dental checkups and preventive oral care for children in a comfortable environment.</p>
+                <a href="contact.html" class="service-link">Book Service →</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SECTION 3: WHY CHOOSE US -->
+
+<section class="section why-section">
+
+    <div class="why-image">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=85" alt="Modern Dental Clinic">
+    </div>
+
+    <div class="why-content">
+
+        <span>WHY CHOOSE US</span>
+
+        <h2>Your Smile Deserves The Best Care</h2>
+
+        <p>
+            Our clinic focuses on patient comfort, clear communication
+            and personalized dental care at every visit.
+        </p>
+
+        <div class="benefit">
+            <div class="benefit-icon">✓</div>
+            <div>
+                <h3>Experienced Dental Team</h3>
+                <p>Care from qualified dental professionals.</p>
+            </div>
+        </div>
+
+        <div class="benefit">
+            <div class="benefit-icon">✦</div>
+            <div>
+                <h3>Modern Equipment</h3>
+                <p>Contemporary tools and treatment facilities.</p>
+            </div>
+        </div>
+
+        <div class="benefit">
+            <div class="benefit-icon">♡</div>
+            <div>
+                <h3>Patient-Focused Care</h3>
+                <p>Friendly support and personalized attention.</p>
+            </div>
+        </div>
+
+        <a href="about.html" class="primary-btn">Learn More About Us</a>
+
+    </div>
+
+</section>
+
+<!-- SECTION 4: PROCESS -->
+
+<section class="section process-section">
+
+    <div class="section-title">
+        <span>HOW IT WORKS</span>
+        <h2>Your Journey To A Healthy Smile</h2>
+        <p>Our simple process helps make your dental visit comfortable and convenient.</p>
+    </div>
+
+    <div class="process-grid">
+
+        <div class="process-card" style="border: 1px solid var(--primary);">
+            <div class="process-icon">01</div>
+            <h3>Book Appointment</h3>
+            <p>Contact our clinic and schedule a convenient visit.</p>
+        </div>
+
+        <div class="process-card" style="border: 1px solid var(--primary);">
+            <div class="process-icon">02</div>
+            <h3>Dental Consultation</h3>
+            <p>Discuss your dental concerns with our dental team.</p>
+        </div>
+
+        <div class="process-card" style="border: 1px solid var(--primary);">
+            <div class="process-icon">03</div>
+            <h3>Personalized Treatment</h3>
+            <p>Understand your treatment options and care plan.</p>
+        </div>
+
+        <div class="process-card" style="border: 1px solid var(--primary);">
+            <div class="process-icon">04</div>
+            <h3>Follow-Up Care</h3>
+            <p>Receive guidance for maintaining your oral health.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SECTION 5: TEAM -->
+
+<section class="section">
+
+    <div class="section-title">
+        <span>OUR PROFESSIONALS</span>
+        <h2>Meet Our Dental Team</h2>
+        <p>Our dental team is committed to providing attentive and professional patient care.</p>
+    </div>
+
+    <div class="team-grid">
+
+        <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80" alt="Dentist">
+            <div>
+                <h3>Dr. John Smith</h3>
+                <p>General Dentist</p>
+            </div>
+        </div>
+
+        <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80" alt="Dental Specialist">
+            <div>
+                <h3>Dr. Sarah Williams</h3>
+                <p>Dental Specialist</p>
+            </div>
+        </div>
+
+        <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=80" alt="Dental Doctor">
+            <div>
+                <h3>Dr. Michael Brown</h3>
+                <p>Orthodontist</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SECTION 6: CTA -->
+
+<section class="cta">
+
+    <h2>Ready To Take Care Of Your Smile?</h2>
+
+    <p>
+        Schedule your dental consultation and take the next step towards better oral health.
+    </p>
+
+    <a href="contact.html" class="primary-btn">Book Your Appointment</a>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="footer" style="margin-left: -25px;">
+
+    <div class="footer-container">
+
+        <!-- ABOUT CLINIC -->
+
+        <div class="footer-about">
+
+            <div class="footer-logo">
+
+                <div class="logo-icon">
+                    <img src="images/logo.png" alt="Dental Logo">
+                </div>
+
+                <div>
+                    <h2>SMILE<span>CARE</span></h2>
+                    <p>DENTAL & ORAL CARE</p>
+                </div>
+
+            </div>
+
+            <p>
+                Your smile is our priority. We provide
+                professional dental treatments and
+                advanced oral care for a healthy,
+                confident and beautiful smile.
+            </p>
+
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+
+        </div>
+
+        <!-- QUICK LINKS -->
+
+        <div class="footer-column">
+
+            <h3>Quick Links</h3>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+
+            </ul>
+
+        </div>
+
+        <!-- OUR SERVICES -->
+
+        <div class="footer-column">
+
+            <h3>Our Services</h3>
+
+            <ul>
+                <li><a href="services.html">General Dentistry</a></li>
+                <li><a href="services.html">Teeth Whitening</a></li>
+                <li><a href="services.html">Dental Implants</a></li>
+                <li><a href="services.html">Orthodontics</a></li>
+                <li><a href="services.html">Root Canal</a></li>
+            </ul>
+
+        </div>
+
+        <!-- PATIENT SUPPORT -->
+
+        <div class="footer-column">
+
+            <h3>Patient Support</h3>
+
+            <ul>
+                <li><a href="contact.html">FAQs</a></li>
+                <li><a href="contact.html">Book Appointment</a></li>
+                <li><a href="contact.html">Patient Guidelines</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="contact.html">Payment Information</a></li>
+            </ul>
+
+        </div>
+
+        <!-- CONTACT US -->
+
+        <div class="footer-column">
+
+            <h3>Contact Us</h3>
+
+            <div class="contact-info">
+                <p>+91 98765 43210</p>
+                <p>support@smilecare.com</p>
+                <p>Hyderabad, Telangana</p>
+                <p>Mon - Sat: 9 AM - 8 PM</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- COPYRIGHT -->
+
+    <div class="copyright">
+
+        <p>
+            &copy; <span id="currentYear"></span>
+            SmileCare Dental Clinic. All Rights Reserved.
+        </p>
+
+        <div class="legal-links">
+            <a href="terms.html">Terms &amp; Conditions</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+/* DARK / LIGHT MODE */
+
+function toggleTheme() {
+
+    document.body.classList.toggle("dark");
+
+    const icon = document.querySelector("#themeBtn i");
+
+    if (document.body.classList.contains("dark")) {
+        icon.className = "fa-solid fa-sun";
+        localStorage.setItem("theme","dark");
+    } else {
+        icon.className = "fa-solid fa-moon";
+        localStorage.setItem("theme","light");
+    }
+
+}
+
+/* LOAD SAVED THEME */
+
+if (localStorage.getItem("theme") === "dark") {
+
+    document.body.classList.add("dark");
+
+    document.querySelector("#themeBtn i").className =
+        "fa-solid fa-sun";
+
+}
+
+/* RTL / LTR */
+
+function toggleRTL() {
+
+    document.body.classList.toggle("rtl");
+
+    const isRTL = document.body.classList.contains("rtl");
+
+    document.documentElement.dir = isRTL ? "rtl" : "ltr";
+
+    localStorage.setItem("direction",isRTL ? "rtl" : "ltr");
+
+}
+
+/* LOAD SAVED DIRECTION */
+
+if (localStorage.getItem("direction") === "rtl") {
+
+    document.body.classList.add("rtl");
+    document.documentElement.dir = "rtl";
+
+}
+
+/* HOME DROPDOWN */
+
+function toggleHomeDropdown() {
+
+    const dropdown = document.getElementById("homeDropdown");
+
+    const button = dropdown.querySelector(".dropdown-toggle");
+
+    dropdown.classList.toggle("open");
+
+    button.setAttribute(
+        "aria-expanded",
+        dropdown.classList.contains("open")
+    );
+
+}
+
+/* CLOSE DROPDOWN OUTSIDE CLICK */
+
+document.addEventListener("click",function(event) {
+
+    const dropdown = document.getElementById("homeDropdown");
+
+    if (!dropdown.contains(event.target)) {
+
+        dropdown.classList.remove("open");
+
+        dropdown.querySelector(".dropdown-toggle")
+            .setAttribute("aria-expanded","false");
+
+    }
+
+});
+
+/* CLOSE DROPDOWN WITH ESCAPE */
+
+document.addEventListener("keydown",function(event) {
+
+    if (event.key === "Escape") {
+
+        const dropdown = document.getElementById("homeDropdown");
+
+        dropdown.classList.remove("open");
+
+        dropdown.querySelector(".dropdown-toggle")
+            .setAttribute("aria-expanded","false");
+
+    }
+
+});
+
+/* CURRENT YEAR */
+
+document.getElementById("currentYear").textContent =
+    new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
